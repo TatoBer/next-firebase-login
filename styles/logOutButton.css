@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
+.your-button-logout {
+  /* COLORS */
+  --color-secondary: #d78d37;
+  --color-secondary-t: #d78d3760;
+  --color-primary: #c52b2b;
+  --color-primary-t: #c52b2b60;
+  --color-text: #ffffff;
+
+  color: var(--color-text);
+  letter-spacing: 1px;
+  font-weight: bold;
+  backdrop-filter: blur(7px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  font-family: 'Josefin Sans', sans-serif;
+  border: none;
+
+  border-radius: 2001px;
+  font-size: 17px;
+  padding: 20px 40px;
+  background: linear-gradient(
+    220.55deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  text-shadow: 0 2px rgba(0, 0, 0, 0.521);
+  box-shadow: 5px 5px 15px #0000006b;
+}
+
+.your-button-logout:hover {
+  filter: grayscale(1);
+}
+
+.your-button-logout:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn1 4s ease-in-out infinite;
+}
+
+@keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}

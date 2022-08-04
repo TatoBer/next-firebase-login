@@ -1,0 +1,44 @@
+.full-screen-loading {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(20, 20, 20);
+  transition: all 0.3s ease;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  pointer-events: all;
+}
+
+.full-screen-loading svg {
+  animation: rotation 1.5s cubic-bezier(0.34, 0.93, 0.72, 0.53) infinite;
+  font-size: 65px;
+  user-select: none;
+  fill: var(--primary-color);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.full-screen-loading strong {
+  color: var(--secondary-color);
+  letter-spacing: 1px;
+  font-size: 25px;
+  user-select: none;
+  margin-top: 40px;
+}
+
+.full-screen-loading.out {
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.5);
+}

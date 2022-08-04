@@ -1,0 +1,33 @@
+  .your-button2 {
+
+    /* COLORS */
+    --color-secondary: #a172b4;
+    --color-secondary-t: #a172b460;
+    --color-primary: #29a7a7;
+    --color-primary-t: #29a7a760;
+    --color-text: #ffffff;
+
+
+    color: var(--color-text);
+    letter-spacing: 2px;
+    font-weight: bold;
+    backdrop-filter: blur(7px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: none;
+
+    border-radius: 40px;
+    font-size: 17px;
+    padding: 20.4px;
+    background:  #0000008c;
+    
+}
+
+.your-button2:hover {
+    opacity: .4;
+}
+
+
+  
+  

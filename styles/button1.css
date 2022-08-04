@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
+.your-button svg {
+  padding: 0;
+  margin: 0;
+  margin-left: 5px;
+  font-size: 19px;
+}
+
+.your-button {
+  /* COLORS */
+  --color-secondary: #a172b4;
+  --color-secondary-t: #a172b460;
+  --color-primary: #cc8b19;
+  --color-primary-t: #cc8b1960;
+  --color-text: #ffffff;
+
+  color: var(--color-text);
+  font-weight: bold;
+  letter-spacing: 1px;
+  backdrop-filter: blur(7px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: none;
+  margin: 30px 0;
+  font-family: 'Josefin Sans', sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 19.2px 40px;
+  background: linear-gradient(
+    220.55deg,
+    var(--primary-color) 0%,
+    var(--color-secondary) 100%
+  );
+  box-shadow: 5px 5px 15px #0000006b;
+}
+
+.your-button:hover {
+  transform: scale(0.95);
+}
+
+.your-button:before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn1 4s ease-in-out infinite;
+}
+
+@keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}
