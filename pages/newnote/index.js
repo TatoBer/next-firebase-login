@@ -45,6 +45,7 @@ export default function Home() {
   }, [user]);
 
   const [icon, setIcon] = useState(<ImLibrary />);
+  const [iconS, setIconS] = useState("ImLibrary");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -65,7 +66,7 @@ export default function Home() {
     addNewNote({
       title,
       description,
-      icon: icon.type.name,
+      icon: iconS,
       userEmail: user.email,
     });
     const created = document.querySelector(".created")
@@ -78,74 +79,92 @@ export default function Home() {
   const iconFunctions = [
     () => {
       setIcon(<ImDroplet />);
+      setIconS("ImDroplet");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImFeed />);
+      setIconS("ImFeed");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImAddressBook />);
+      setIconS("ImAddressBook");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImTicket />);
+      setIconS("ImTicket");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImPhone />);
+      setIconS("ImPhone");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImPushpin />);
+      setIconS("ImPushpin");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImDatabase />);
+      setIconS("ImDatabase");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImUserTie />);
+      setIconS("ImUserTie");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImMug />);
+      setIconS("ImMug");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImLeaf />);
+      setIconS("ImLeaf");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImRocket />);
+      setIconS("ImRocket");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImPower />);
+      setIconS("ImPower");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImCross />);
+      setIconS("ImCross");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImCheckmark />);
+      setIconS("ImCheckmark");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImAppleinc />);
+      setIconS("ImAppleinc");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImClubs />);
+      setIconS("ImClubs");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImLibrary />);
+      setIconS("ImLibrary");
       document.querySelector(".icons-section").classList.add("off");
     },
     () => {
       setIcon(<ImFolderOpen />);
+      setIconS("ImFolderOpen");
       document.querySelector(".icons-section").classList.add("off");
     },
   ];
@@ -156,7 +175,7 @@ export default function Home() {
   };
 
   const asd = ()=>{
-    console.log(icon)
+    console.log(String(icon))
   }
 
   return (
