@@ -19,7 +19,7 @@ const NoteUnique = (props) => {
   const [user, setUser] = useState(undefined);
 
   const handleDeleteNote = () => {
-    deleteNote(note[0].id);
+    deleteNote(note.id);
     setTimeout(() => {
       router.push("/notes");
     }, 250);
