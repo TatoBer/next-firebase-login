@@ -1,0 +1,39 @@
+.nota {
+    background-color: rgba(0, 0, 0, 0.849);
+    padding: 20px;
+    border-radius: 5px;
+    border-bottom: 2px solid var(--secondary-color);
+    width: 80%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+    transition: opacity .2s ease;
+}
+
+.nota:hover {
+    opacity: .5;
+}
+
+.nota > div > p {
+    opacity: .5;
+    max-height: 43px;
+    font-size: 15px;
+    user-select: none;
+}
+
+.nota > div > h4 {
+margin-bottom: 10px;
+}
+
+.nota > svg {
+    font-size: 25px;
+}
+
+.nota > div {
+    overflow: hidden;
+    width: 80%;
+    min-height: 60px;
+    position: relative;
+}

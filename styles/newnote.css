@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+
+.newnote-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.newnote-main > form > textarea {
+  resize: none;
+}
+
+.newnote-main > form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px 50px 50px;
+  background-color: rgba(0, 0, 0, 0.37);
+  border-radius: 30px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.452);
+  width: 75%;
+}
+
+.newnote-main > form > h2 {
+  color: var(--primary-color);
+  margin: 20px 0 0px;
+  letter-spacing: 2px;
+  font-size: 26px;
+  text-align: center;
+}
+
+.newnote-main > form > input[type="text"],
+.newnote-main > form > textarea {
+  background-color: rgba(255, 255, 255, 0.116);
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  transition: background-color .3s ease;
+}
+
+.newnote-main > form > input[type="text"]:focus,
+.newnote-main > form > textarea:focus {
+    background-color: rgba(207, 207, 207, 0.062);
+}
+
+.newnote-main textarea {
+  margin-top: 20px;
+  min-height: 150px;
+}
+
+.newnote-main .your-button {
+  position: absolute;
+  bottom: 10px;
+}
+
+.icon-selector {
+    margin: 30px;
+    padding: 10px;
+    background-color: #fcfcfc25;
+    border: none;
+    outline: none;
+    border-radius: 4000px;
+    transition: background-color .3s ease;
+    cursor: pointer;
+    display: flex;
+}
+
+.icon-selector:hover {
+    background-color: rgba(207, 207, 207, 0.062);
+}
+
+.icon-selector > svg {
+    font-size: 23px;
+}

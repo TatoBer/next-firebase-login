@@ -1,0 +1,27 @@
+.home-nav {
+  display: flex;
+  margin-top: 80px;
+}
+
+.home-nav > a {
+  background: linear-gradient(220.55deg, #a85f2f 0%, #612323 100%);
+  padding: 10px;
+  border-radius: 9000px;
+  margin: 0 7px;
+  cursor: pointer;
+  transition: opacity .3s ease;
+}
+
+.home-nav > a:hover {
+    opacity: .5;
+}
+
+.home-nav > a > svg {
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,38 @@
+.unique-note {
+    background-color: rgba(0, 0, 0, 0.473);
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.unique-note > div {
+    width: 85%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.unique-note > div > h4 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin: 6px 0 14px;
+}
+
+.unique-note > svg {
+    position: absolute;
+    top: -20px;
+    opacity: .7;
+    font-size: 35px;
+}
+
+.unique-note > div > p {
+    margin-bottom: 8px;
+}
+
+.unique-note > div > time {
+    opacity: .3;
+    font-size: 15px;
+}

@@ -1,0 +1,65 @@
+.delete-confirmation {
+    position: absolute;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity .2s ease, transform .2s ease;
+    pointer-events: all;
+}
+
+.delete-confirmation.off {
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(1.4);
+}
+
+.delete-confirmation > div {
+    padding: 30px;
+    max-width: 80%;
+    background-color: rgba(0, 0, 0, 0.753);
+    border-radius: 25px;
+}
+
+.delete-confirmation > div > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.delete-confirmation > div > div > button {
+    margin: 0 10px;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.473);
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    padding: 17px 20px;
+    align-items: center;
+}
+
+.delete-confirmation > div > div > button.your-button {
+    background: linear-gradient(
+        220.55deg,
+        rgb(17, 160, 72) 0%,
+        rgb(22, 150, 128) 100%
+      );
+}
+
+.delete-confirmation > div > div > button:hover {
+    opacity: .5;
+    transform: none;
+    filter: none;
+}
+
+.delete-confirmation > div > strong {
+    font-size: 20px;
+}
+
+.delete-confirmation > div > p {
+    opacity: .8;
+}

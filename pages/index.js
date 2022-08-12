@@ -45,11 +45,9 @@ export default function Login() {
     <>
     <main className="login-main">
       <IoMdLogIn />
-      <h1>LOGIN APP</h1>
+      <h1>NoteHub</h1>
       <p>
-        Aplicacion de prueba para crear
-        <br />
-        logins con firebase!🔥
+      Create your notes online!
       </p>
       <Button1 onClick={handleGitHub}>LOGIN WITH <BsGithub /></Button1>
       <FullScreenLoading />

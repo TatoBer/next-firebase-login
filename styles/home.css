@@ -47,5 +47,12 @@
 
 .home-main .your-button-logout {
     position: absolute;
-    bottom: 50px;
+    bottom: 10px;
+}
+
+.home-main section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

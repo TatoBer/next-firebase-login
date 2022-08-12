@@ -1,0 +1,46 @@
+.notes-main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.notes-main > h2 {
+  color: var(--primary-color);
+  margin: 20px 0 0px;
+  letter-spacing: 2px;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.loading-notes {
+  animation: rotation .5s cubic-bezier(0.34, 0.93, 0.72, 0.53) infinite;
+  font-size: 65px;
+  user-select: none;
+  fill: var(--primary-color);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.notes-main > p {
+    text-align: center;
+}
+
+.notes-main a {
+    text-decoration: underline;
+    text-decoration-color: rgba(240, 248, 255, 0.466);
+}

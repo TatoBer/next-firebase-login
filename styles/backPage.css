@@ -1,0 +1,14 @@
+.backpage {
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 33px;
+    cursor: pointer;
+    opacity: .9;
+    transition: opacity .2s ease;
+}
+
+.backpage:hover {
+    opacity: .5;
+}

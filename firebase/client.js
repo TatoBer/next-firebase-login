@@ -1,6 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
+import { doc, collection, addDoc, getFirestore, query, where, getDocs, deleteDoc } from "firebase/firestore";
 
 import { getAuth, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -19,40 +20,40 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
 const mapUserFromFirebaseAuth = (userIn) => {
-  if (!userIn) {return null}
-  else if ( userIn.user ) {
-    const { user } = userIn
-    const  { displayName, email, photoURL } = user
+  if (!userIn) {
+    return null;
+  } else if (userIn.user) {
+    const { user } = userIn;
+    const { displayName, email, photoURL } = user;
     return {
       displayName,
       email,
-      photoURL
-    }
-  }
-  else {
-    const { _delegate } = userIn
-    const { photoURL, email, displayName } = _delegate
+      photoURL,
+    };
+  } else {
+    const { _delegate } = userIn;
+    const { photoURL, email, displayName } = _delegate;
     return {
       displayName,
       email,
-      photoURL
-    }
+      photoURL,
+    };
   }
 };
 
 export const onAuthStateChanged = (onChange) => {
   return firebase.auth().onAuthStateChanged((user) => {
-    const normalizedUser = mapUserFromFirebaseAuth(user)
+    const normalizedUser = mapUserFromFirebaseAuth(user);
     onChange(normalizedUser);
   });
 };
 
-export const logOut = ()=>{
-  firebase.auth().signOut()
-}
+export const logOut = () => {
+  firebase.auth().signOut();
+};
 
 export const loginWithGitHub = () => {
   const githubProvider = new GithubAuthProvider();
@@ -60,3 +61,38 @@ export const loginWithGitHub = () => {
   const auth = getAuth();
   return signInWithPopup(auth, githubProvider).then(mapUserFromFirebaseAuth);
 };
+
+const db = getFirestore(app);
+
+export const addNewNote =  ({ title, description, icon, userEmail }) => {
+   addDoc(collection(db, "notes"), {
+    title: title,
+    description: description,
+    icon: String(icon),
+    userEmail: userEmail,
+    createdAt: firebase.firestore.Timestamp.fromDate(new Date()),
+  });
+};
+
+export const getNotes = async (user)=>{
+  const q = query(collection(db, "notes"), where("userEmail", "==" , user.email))
+  const querySnapshot = await getDocs(q)
+  return querySnapshot.docs.map(doc=>{
+    return {id: doc.id, ...doc.data()}
+  })
+}
+
+export const getUniqueNote = async (note)=>{
+  try {
+    const q = query(collection(db, "notes"), where(firebase.firestore.FieldPath.documentId(), "==", note))
+    const querySnapshot = await getDocs(q)
+    return querySnapshot.docs.map(doc=>{
+      return {id: doc.id, ...doc.data()}
+    })
+  }catch {(err=>console.log(err))}
+  
+}
+
+export const deleteNote = async (note)=>{
+  await deleteDoc(doc(db, "notes", note))
+}

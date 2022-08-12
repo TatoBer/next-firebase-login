@@ -1,0 +1,17 @@
+.unique-note-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.unique-note-main > .your-button-logout {
+    position: absolute;
+    top: 10px;
+    padding: 10px 20px;
+    font-size: 17px;
+    z-index: 150;
+}
