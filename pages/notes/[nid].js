@@ -78,7 +78,7 @@ export const getServerSideProps = async (cont)=>{
 const {params, res} = cont
   const {nid} = params
 
-  const apiResponse = await fetch(`http://localhost:3000/api/notes/${nid}`)
+  const apiResponse = await fetch(`https://next-firebase-login-one.vercel.app//api/notes/${nid}`)
     if (apiResponse.ok) {
       const props = await apiResponse.json()
       return {props}
