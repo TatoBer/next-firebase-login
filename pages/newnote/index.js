@@ -155,10 +155,14 @@ export default function Home() {
     document.querySelector(".icons-section").classList.remove("off");
   };
 
+  const asd = ()=>{
+    console.log(icon)
+  }
+
   return (
     <>
       {user && (
-        <main className="newnote-main">
+        <main className="newnote-main" onClick={asd}>
           <form>
             <h2>NEW NOTE</h2>
             <button className="icon-selector" onClick={openIconSection}>
